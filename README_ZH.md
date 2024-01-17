@@ -1369,6 +1369,39 @@ jobs:
 
 - 提交代码：将 k6.yml 文件添加到仓库中并提交。
 - 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 K6 Performance Test 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果。
+![ ](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/NlOiHp.png)
+
+- 我们也通过 github action 输出 html 报告，先调整一下 k6.yml 文件
+
+```yml
+name: K6 Performance Test
+on: [push]
+jobs:
+  build:
+    name: Run k6 performance test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run k6 local test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: demo.js
+          flags: --vus 50 --duration 10s
+      - name: Archive K6 performance test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: K6-performance-test-report
+          path: summary.html
+      - name: Upload K6 performance test report to GitHub
+        uses: actions/upload-artifact@v3
+        with:
+          name: K6-performance-test-report
+          path: summary.html
+```
+
+- 提交代码：将 k6.yml 文件添加到仓库中并提交。
+- 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 K6 Performance Test 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果。
 
 ## 参考资料
 
