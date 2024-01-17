@@ -1401,7 +1401,8 @@ jobs:
 ```
 
 - 提交代码：将 k6.yml 文件添加到仓库中并提交。
-- 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 K6 Performance Test 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果。
+- 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 K6 Performance Test 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果和测试报告附件。
+![ ](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/sFCarY.png)
 
 ## 参考资料
 
