@@ -83,7 +83,7 @@
       - [可以获取 HAR 文件的浏览器和工具](#可以获取-har-文件的浏览器和工具)
       - [如何使用浏览器开发者工具获取 HAR 文件](#如何使用浏览器开发者工具获取-har-文件)
       - [使用 har-to-k6 进行转换 HAR 文件](#使用-har-to-k6-进行转换-har-文件)
-  - [生成 html 报告](#生成-html-报告)
+  - [输出 html 报告](#输出-html-报告)
   - [持续集成](#持续集成)
     - [接入 github action](#接入-github-action)
   - [参考资料](#参考资料)
@@ -1285,7 +1285,7 @@ K6 Recorder 录制器是一个浏览器扩展程序，可以在 Chrome 或 Firef
 
 更多关于 HAR 文件的内容，请参考官方文档：[https://grafana.com/docs/k6/latest/using-k6/test-authoring/create-tests-from-recordings/using-the-har-converter/](https://grafana.com/docs/k6/latest/using-k6/test-authoring/create-tests-from-recordings/using-the-har-converter/)
 
-## 生成 html 报告
+## 输出 html 报告
 
 通过之前的 K6 的默认测试报告来看，K6 本身只能输出命令行的报告，没有图形化界面的测试报告。
 
