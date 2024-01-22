@@ -83,9 +83,12 @@
       - [可以获取 HAR 文件的浏览器和工具](#可以获取-har-文件的浏览器和工具)
       - [如何使用浏览器开发者工具获取 HAR 文件](#如何使用浏览器开发者工具获取-har-文件)
       - [使用 har-to-k6 进行转换 HAR 文件](#使用-har-to-k6-进行转换-har-文件)
-  - [输出 html 报告](#输出-html-报告)
-  - [持续集成](#持续集成)
-    - [接入 github action](#接入-github-action)
+  - [进阶](#进阶)
+    - [输出 html 报告](#输出-html-报告)
+    - [持续集成](#持续集成)
+      - [接入 github action](#接入-github-action)
+    - [Options 配置选项](#options-配置选项)
+      - [如何使用配置选项](#如何使用配置选项)
   - [参考资料](#参考资料)
 
 ## 什么是 K6
@@ -1285,7 +1288,9 @@ K6 Recorder 录制器是一个浏览器扩展程序，可以在 Chrome 或 Firef
 
 更多关于 HAR 文件的内容，请参考官方文档：[https://grafana.com/docs/k6/latest/using-k6/test-authoring/create-tests-from-recordings/using-the-har-converter/](https://grafana.com/docs/k6/latest/using-k6/test-authoring/create-tests-from-recordings/using-the-har-converter/)
 
-## 输出 html 报告
+## 进阶
+
+### 输出 html 报告
 
 通过之前的 K6 的默认测试报告来看，K6 本身只能输出命令行的报告，没有图形化界面的测试报告。
 
@@ -1338,9 +1343,9 @@ export function handleSummary(data) {
 
 更多关于 K6 HTML Report Exporter v2 插件的用法，请参考官方文档 https://github.com/benc-uk/k6-reporter[https://github.com/benc-uk/k6-reporter]
 
-## 持续集成
+### 持续集成
 
-### 接入 github action
+#### 接入 github action
 
 以 github action 为例，其他 CI 工具类似
 
@@ -1403,6 +1408,12 @@ jobs:
 - 提交代码：将 k6.yml 文件添加到仓库中并提交。
 - 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 K6 Performance Test 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果和测试报告附件。
 ![ ](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/sFCarY.png)
+
+### Options 配置选项
+
+K6 的选项配置是来通过不同选项来配置测试运行行为。例如，选项是如何定义测试标签、阈值、用户代理以及虚拟用户和迭代的数量。
+
+#### 如何使用配置选项
 
 ## 参考资料
 
